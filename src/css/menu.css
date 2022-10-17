@@ -1,0 +1,37 @@
+.menuMain {
+    background-color: rgba(50, 50, 50);
+    text-align: center;
+}
+.foodSection {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+}
+.foodSection h1 {
+    color: brown;
+}
+.foodCategory {
+    background-color: rgba(80, 80, 80);
+    padding: 1rem 2rem;
+}
+.foodItem {
+    position: relative;
+    background-color: rgba(100, 100, 100);
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+.priceAndTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.description {
+    display: flex;
+    flex-direction: row;
+}
+.alergens {
+    display: flex;
+    flex-direction: row;
+}
