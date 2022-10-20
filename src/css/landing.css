@@ -1,5 +1,5 @@
 .hero {
-    margin-top: -10px;
+    z-index: 5;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
@@ -7,6 +7,16 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+}
+.workTime {
+    font-weight: 600;
 }
 @media only screen and (min-width: 600px) {
     .hero {

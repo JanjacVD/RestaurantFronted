@@ -7,6 +7,8 @@
     padding: 4rem 0;
 }
 body {
+    height: 200vh;
+    -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);

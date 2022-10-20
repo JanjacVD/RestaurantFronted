@@ -8,13 +8,13 @@ export default function Router() {
     return (
         <>
             <Navbar />
-            <div className="main">
+            <main className="main">
                 <Routes>
                     <Route path="/" element={<Landing />} />
                     <Route path="/menu/" element={<Menu />} />
                     <Route path="*" element={<Error404 />} />
                 </Routes>
-            </div>
+            </main>
         </>
     );
 }

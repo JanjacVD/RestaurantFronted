@@ -1,4 +1,3 @@
-import {NavLink} from 'react-router-dom';
 import React, {useState} from 'react';
 import './nav.css';
 import NavigationButton from './components/NavigationButton';

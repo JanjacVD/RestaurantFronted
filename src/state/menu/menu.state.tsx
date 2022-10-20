@@ -12,7 +12,6 @@ export default function MenuContextProvider({children}: {children: ReactNode}) {
                 return section.categories.length > 0;
             });
             setMenuState(menuFilter);
-            console.log(menuFilter);
         });
     }, []);
     return (

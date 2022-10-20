@@ -3,12 +3,12 @@ nav {
     top: 0;
     left: 0;
     width: 100vw;
-    z-index: 100;
+    z-index: 15;
     background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.2rem 2rem;
+    padding: 1.5rem 2rem;
     background-color: black;
     align-items: center;
 }
