@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FoodCategory from './FoodCategory';
-export default function FoodSection(props: any) {
-    const title = props.title;
-    const categories = props.categories;
-    const order = props.order;
+export default function FoodSection({
+    title,
+    categories,
+}: {
+    title: any;
+    categories: any;
+}) {
     return (
         <div className="foodSection">
             <h1>{title['en']}</h1>

@@ -1,4 +1,12 @@
-import React from 'react';
+import axios from 'axios';
+import '../css/landing.css';
+import React, {useEffect, useState} from 'react';
 export default function Landing() {
-    return <div></div>;
+    const url = '';
+    const [data, setData] = useState();
+    return (
+        <div>
+            <div className="hero"></div>
+        </div>
+    );
 }

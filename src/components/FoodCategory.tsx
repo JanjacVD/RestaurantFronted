@@ -12,10 +12,12 @@ export default function FoodCategory({
 }) {
     return (
         <div className="foodCategory">
-            <h3>{title['en']}</h3>
-            {items.map((item: any, index: number) => {
-                return <FoodItem {...item} key={index} />;
-            })}
+            <h4>{title['en']}</h4>
+            <div className="items">
+                {items.map((item: any, index: number) => {
+                    return <FoodItem {...item} key={index} />;
+                })}
+            </div>
         </div>
     );
 }

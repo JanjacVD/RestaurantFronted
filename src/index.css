@@ -7,6 +7,7 @@
     padding: 4rem 0;
 }
 body {
-    background-color: rgba(10, 10, 10);
-    color: rgba(144, 144, 144);
+    overflow-x: hidden;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }

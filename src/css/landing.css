@@ -1,0 +1,18 @@
+.hero {
+    margin-top: -10px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/images/index-small.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (min-width: 600px) {
+    .hero {
+        background: url('../assets/images/index.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
