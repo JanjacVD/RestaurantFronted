@@ -1,18 +1,21 @@
-import React, {useEffect, useState, useContext} from 'react';
-import axios from 'axios';
-import FoodSection from '../components/FoodSection';
+import React, {useEffect, useState, useContext, Suspense} from 'react';
+import FoodSection from '../components/menu/FoodSection';
 import '../css/menu.css';
-import {MenuContext} from '../state/menu/menu.state';
+import {InfoContext} from '../state/info.state';
+import Loading from '../layouts/Loading';
+import {SuperSEO} from 'react-super-seo';
 export default function Menu() {
-    const menuItems = useContext<any>(MenuContext);
-
-    if (!menuItems) {
-        return <div>Loading</div>;
+    const {menuState} = useContext<any>(InfoContext);
+    if (!menuState) {
+        return <Loading />;
     }
     return (
         <div className="menuMain">
-            <h1>Menu</h1>
-            {menuItems.map((section: any, index: number) => {
+            <div className="banner">
+                <div className="img"></div>
+                <h1>Menu</h1>
+            </div>
+            {menuState.map((section: any, index: number) => {
                 return <FoodSection key={index} {...section} />;
             })}
         </div>

@@ -1,3 +1,9 @@
 export const backendUrl = 'http://localhost:8000/api/v1/';
 export const menuUrl = backendUrl + 'menu';
 export const infoUrl = backendUrl + 'info';
+export const contactUrl = backendUrl + 'contact';
+export const disabledDatesUrl = backendUrl + 'dates';
+export const disabledTimesUrl = backendUrl + 'times';
+export const reservationUrl = backendUrl + 'reservation-make';
+export const confirmationUrl = backendUrl + 'reservation-confirm';
+export const cancelationUrl = backendUrl + 'reservation-cancel';

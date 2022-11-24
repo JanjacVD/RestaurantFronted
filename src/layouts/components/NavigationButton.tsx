@@ -1,15 +1,21 @@
 import {NavLink} from 'react-router-dom';
 import React from 'react';
+interface TranslationInterface{
+    en: string,
+    hr: string,
+}
 export default function NavigationButton({
     title,
     setNavToggled,
     navStatus,
     linkTo,
+    currentLang
 }: {
-    title: string;
+    title: TranslationInterface;
     setNavToggled: any;
     navStatus: boolean;
     linkTo: string;
+    currentLang: 'en' | 'hr';
 }) {
     function navClicked() {
         setNavToggled(!navStatus);
@@ -21,7 +27,7 @@ export default function NavigationButton({
             onClick={() => navClicked()}
             to={linkTo}
         >
-            {title}
+            {title[currentLang]}
         </NavLink>
     );
 }

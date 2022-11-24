@@ -1,0 +1,17 @@
+{
+    "landing": {
+        "title": "Our story",
+        "description": "Lorem ipsuem text"
+    },
+    "buttons": {
+        "book": "Book a table",
+        "check": "Check the menu"
+    },
+    "icons":{
+        "wheel": "Wheelchair accessible",
+        "pet": "Pet friendly",
+        "pay": "Contactless pay",
+        "book": "Bookable online",
+        "private": "Private hosts"
+    }
+}

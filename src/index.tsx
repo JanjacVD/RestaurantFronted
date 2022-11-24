@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {BrowserRouter} from 'react-router-dom';
 import Router from './Router';
-import MenuContextProvider from './state/menu/menu.state';
+import InfoContextProvider from './state/info.state';
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );
 root.render(
     <React.StrictMode>
-        <MenuContextProvider>
+        <InfoContextProvider>
             <BrowserRouter>
                 <Router />
             </BrowserRouter>
-        </MenuContextProvider>
+        </InfoContextProvider>
     </React.StrictMode>,
 );
 

@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Alergen from './FoodAlergen';
+import {InfoContext} from '../../state/info.state';
 export default function FoodItem({
     title,
     description,
@@ -8,31 +9,34 @@ export default function FoodItem({
 }: {
     title: any;
     description: any;
-    price: any;
+    price: number;
     alergens: any;
 }) {
     const [showMoreDisplayed, setShowMoreDisplayed] = useState<boolean>(false);
     const countOfAlergens = alergens.length;
+    const {currentLang} = useContext(InfoContext);
+
     return (
         <div
             className="foodItem"
-            onClick={() => setShowMoreDisplayed(!showMoreDisplayed)}
-        >
+            onClick={() => setShowMoreDisplayed(!showMoreDisplayed)}>
             <div className="priceAndTitle">
-                <h6>{title['en']}</h6>
-                <p>{price} kn</p>
+                <h6>{title[currentLang]}</h6>
+                <p>
+                    {(price / 7.5345).toFixed(2)} € / {price} kn
+                </p>
             </div>
+
             <div
                 className={
                     showMoreDisplayed ? 'details details-toggled' : 'details'
-                }
-            >
+                }>
                 <div className="details-text">
                     <b>
-                        <p>{title['en']}</p>
+                        <p>{title[currentLang]}</p>
                     </b>
                     <div className="description">
-                        <p>{description['en']}</p>
+                        <p>{description[currentLang]}</p>
                     </div>
                     {countOfAlergens > 0 ? (
                         <div className="alergens">
@@ -40,7 +44,7 @@ export default function FoodItem({
                             {alergens.map((alergen: any, index: number) => {
                                 return (
                                     <Alergen
-                                        title={alergen.title['en']}
+                                        title={alergen.title[currentLang]}
                                         count={countOfAlergens}
                                         key={index}
                                         index={index}
@@ -51,7 +55,9 @@ export default function FoodItem({
                     ) : (
                         ''
                     )}
-                    <p>{price} kn</p>
+                    <p>
+                        {(price * 7.5345).toFixed(2)} € / {price} kn
+                    </p>
                 </div>
             </div>
         </div>

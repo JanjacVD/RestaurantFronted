@@ -1,8 +1,8 @@
 .hero {
     z-index: 5;
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    width: 101vw;
+    height: 101vh;
     background: url('../assets/images/index-small.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -13,10 +13,149 @@
     flex-direction: column;
     text-align: center;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 .workTime {
     font-weight: 600;
+}
+/*ABOUT US */
+
+/*=======ABOUT US=====*/
+#about {
+    margin: 100px 30px;
+    padding: 5px;
+    width: auto;
+    min-height: 50vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'image text' 'info info';
+}
+.randomtext{
+    text-align: left;
+}
+#about img {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+}
+
+.aboutus-box {
+    grid-area: text;
+    margin-top: 1.5rem;
+    width: 98%;
+    font-size: 1.1em;
+    color: black;
+    font-weight: 700;
+    line-height: 3em;
+}
+
+.aboutus-box h2 {
+    padding-bottom: 2rem;
+    font-size: 3em;
+}
+
+.friendly-box {
+    grid-area: info;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: #fbfbfb;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.icon {
+    padding: 50px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.icon svg {
+    width: 40px !important;
+}
+
+.buttons {
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    margin: auto;
+}
+
+a.about-btn {
+    text-decoration: none;
+    color: white;
+    padding: 0.3em 2em;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.about-btn:hover {
+    transition: 0.5s;
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 1200px) {
+    #about {
+        grid-template-areas: 'image image' 'text text' 'info info' 'info info';
+        width: 96vw;
+        margin-left: 2vw;
+        text-align: left;
+    }
+    #about p{
+        padding: 1rem;
+    }
+    .friendly-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #about {
+        grid-template-areas: 'image image' 'text text' 'info info' 'info info' 'info info';
+        text-align: left;
+    }
+
+    .about-btn {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.7em;
+    }
+
+    .friendly-box {
+        font-size: 0.7em;
+        width: 100%;
+        display: grid;
+        grid-gap: 0.2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px) {
+    #about {
+        grid-template-areas: 'image image' 'text text' 'info info' 'info info' 'info info' 'info info' 'info info' 'info info';
+        text-align: center;
+    }
+    .about-btn {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.7em;
+    }
+    .friendly-box {
+        font-size: 0.7em;
+        width: 100%;
+        display: grid;
+        grid-gap: 0.2rem;
+        grid-template-columns: 1fr;
+    }
 }
 @media only screen and (min-width: 600px) {
     .hero {
@@ -24,5 +163,10 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #about img {
+        width: 97%;
     }
 }

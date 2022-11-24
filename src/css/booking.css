@@ -1,0 +1,179 @@
+.booking-form {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background-image: url('../assets/images/booking.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.booking-form form {
+    margin: auto;
+    min-width: 60%;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 3rem 4rem;
+    padding-bottom: 4rem;
+}
+.booking-form form .inputArea {
+    background-color: rgb(0, 0, 0, 0.1);
+    position: relative;
+    padding: 0.5rem 2rem;
+    margin-top: 0.5rem;
+    user-select: none;
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.879);
+}
+.booking-form .inputArea input {
+    all: unset;
+    position: relative;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.4rem;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+}
+.booking-form .inputArea label {
+    position: absolute;
+    transition: all 0.4s;
+    bottom: 20px;
+}
+.booking-form .inputArea strong {
+    position: absolute;
+    transition: all 0.4s;
+    bottom: 50px;
+    right:30px;
+    font-size: 1rem;
+    color:rgb(255, 111, 111);
+}
+.booking-form .inputArea input:not(input[value='']) ~ label {
+    animation: label 0.5s linear forwards;
+}
+.booking-success{
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.826);
+    text-align: center;
+}
+.booking-success h2{
+    margin-bottom: 1rem;
+}
+.booking-form form h1 {
+    grid-column: span 2;
+    text-align: center;
+    color: rgb(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 2.2rem;
+}
+.choose-step {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+}
+.choose-step button {
+    all: unset;
+    transition: 0.5s;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.547);
+    cursor: pointer;
+    padding: 0.5rem 2.5rem;
+    color: #fff;
+}
+.choose-step button:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.651);
+    cursor: pointer;
+    color: #fff;
+}
+.time-option-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.time-option-grid button {
+    all: unset;
+    border-radius: 8px;
+    transition: 0.5s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 0.78);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.61);
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0.4rem 0;
+}
+.time-option-grid button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.time-option-selected{
+    background-color: rgb(149, 160, 235) !important;
+}
+input[aria-invalid=true]{
+    border-bottom:2px solid red !important;
+    color: red !important;
+}
+.step-count{
+    padding: 2rem 0;
+    margin: 2rem 0;
+    background-color: rgba(18, 18, 18, 0.3);
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    color: rgba(255, 255, 255, 0.373);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.step-count span.active{
+    color: rgb(255, 255, 255,1) !important;
+}
+@keyframes label {
+    0% {
+        bottom: 20px;
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.6);
+        bottom: 35px;
+    }
+}
+@media screen and (max-width:900px) {
+    .booking-form form h1{
+        font-size: 1.6rem;
+    }
+    .booking-form{
+        padding: 0;
+    }
+    .booking-form form{
+        margin: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 90vw !important;
+    }
+    .step-count{
+        padding: 1.5rem 0.3rem;
+        margin: 2rem 0;
+        background-color: rgba(18, 18, 18, 0.3);
+        text-align: center;
+        border-radius: 8px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 0.9rem;
+        color: rgba(255, 255, 255, 0.373);
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+    .time-option-grid button{
+        font-size: 1.2rem;
+    }
+}

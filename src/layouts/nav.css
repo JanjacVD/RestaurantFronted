@@ -1,16 +1,45 @@
+@font-face {
+    font-family: RedHat;
+    src: ('../assets/fonts/Red_Hat_Display/RedHatDisplay-Medium.ttf');
+}
+nav > * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+header > * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 nav {
     position: fixed;
-    top: 0;
+    overflow: hidden;
     left: 0;
+    top: 0;
+    transition: 0.5s;
     width: 100vw;
     z-index: 15;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
-    background-color: black;
+    padding: 2rem 2rem;
     align-items: center;
+}
+.navHidden {
+    opacity: 0;
+    transition: 0.5s;
+}
+.navSeen {
+    opacity: 1;
+    transition: 0.5s;
 }
 #nav-icon3 {
     z-index: 100;
@@ -33,7 +62,7 @@ nav {
     position: absolute;
     height: 4px;
     width: 100%;
-    background: #d3531a;
+    background: #ffffff;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -85,12 +114,38 @@ nav {
     width: 0%;
     left: 50%;
 }
+.offcanvas-icon {
+    margin-left: 90%;
+    margin-top: -10%;
+}
+.offcanvas-icon span {
+    transition: 0.4s;
+    background: black !important;
+}
+.offcanvas-icon:hover span {
+    transition: 0.4s;
+    background-color: rgb(188, 163, 21) !important;
+}
 .logo {
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
     color: #fff;
+    font-size: 1.8em;
+    opacity: 1;
+    font-weight: 800;
+    letter-spacing: 0.7rem;
+    font-family: 'RedHat';
     z-index: 10;
 }
+.logo-hidden {
+    opacity: 0;
+    transition: 0.4s;
+}
 .offcanvas {
-    width: 35vw;
+    overflow: hidden;
+    position: relative;
+    width: 45vw;
     height: 101vh;
     z-index: 100;
     position: fixed;
@@ -99,23 +154,50 @@ nav {
     transition: 0.4s;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 5rem 1.5rem;
-    background-color: black;
+    padding-bottom: 0;
+    background-color: rgb(255, 255, 255);
+}
+.lang {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+.links {
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
 }
 .offcanvasActive {
     left: 0;
     transition: 0.4s;
 }
+.offcanvas a img {
+    width: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: transform;
+    transition-duration: 1.3s;
+}
+.offcanvas a img:hover {
+    transition: transform;
+    transition-duration: 1.3s;
+    transform: rotate(360deg);
+}
 .offcanvas a {
     text-decoration: none;
-    color: #fff;
+    color: rgb(28, 28, 28);
     margin-top: 1rem;
-    font-size: 1.3rem;
+    font-size: 2em;
     transition: 0.3s;
 }
 .offcanvas a:hover {
     transition: 0.3s;
     color: rgba(197, 182, 172, 0.699);
+}
+.offcanvas img {
+    width: 100%;
 }
 a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -126,4 +208,64 @@ a.activeLink {
 }
 a.activeLink:hover {
     color: rgb(188, 163, 21);
+}
+.langModal {
+    position: fixed;
+    width: 80vw;
+    height: 50vh;
+    top: 25%;
+    left: 10%;
+    background-color: red;
+    opacity: 1;
+}
+.offcanvasLang {
+    width: 45vw;
+    height: 101vh;
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 1.5rem;
+    background-color: rgb(255, 255, 255);
+}
+.offcanvasLang button {
+    all: unset;
+    cursor: pointer;
+}
+.offcanvasLang button svg {
+    height: 40px;
+}
+.offcanvasLang-active {
+    left: 0;
+    transition: 0.4s;
+}
+@media only screen and (min-width: 1200px) {
+    .offcanvas,
+    .offcanvasLang {
+        width: 20vw;
+    }
+}
+.offcanvasLang ul {
+    list-style-type: none;
+    list-style: none;
+    font-size: 2em;
+}
+.offcanvasLang li {
+    margin-top: 1rem;
+}
+.offcanvasLang .activeLink {
+    transition: 0.3s;
+    color: rgb(188, 163, 21);
+}
+.offcanvasLang .activeLink:hover {
+    color: rgb(188, 163, 21);
+}
+@media screen and (max-width: 900px) {
+    .offcanvas,
+    .offcanvasLang {
+        width: 100vw;
+    }
 }

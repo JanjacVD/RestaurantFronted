@@ -1,49 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 .menuMain {
     background-color: rgb(255, 255, 255);
     text-align: center;
-    padding: 1rem 2rem;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 10rem;
+}
+.banner {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100vw;
+    position: relative;
+    min-height: 35vh;
+    align-items: center;
+    justify-content: center;
+}
+.banner .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/menu.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 40vh;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    z-index: 1;
+}
+.banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    transform: translate(-50%, -50%);
+    color: #e9f1f1;
+    font-size: 4em;
+    z-index: 12;
+    margin: auto;
 }
 .foodSection {
-    text-transform: capitalize;
     margin-top: 2rem;
-    padding: 1rem 1rem;
-    background-color: rgb(250, 250, 250);
+    padding: 1rem 2rem;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    box-shadow: 1px 1px 2px 3px #d8d8d8;
+    box-shadow: 1px 1px 2px 3px #ffffff;
+    text-transform: uppercase;
 }
-.foodSection h1 {
+.foodSection h2 {
     color: rgb(0, 0, 0);
     position: relative;
-    margin-bottom: 20px;
-}
-.foodCategory {
-    color: black;
-    font-size: 1.4em;
     margin-top: 2rem;
-}
-.foodSection h1 {
     font-size: 2em;
     position: relative;
     width: 100%;
 }
-.foodSection h1::after {
-    position: absolute;
-    bottom: -5px;
-    content: ' ';
+.foodCategory {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 1.4em;
+    margin-top: 2rem;
+}
+.foodCategory h4 {
+    position: relative;
     width: 100%;
-    left: 0;
+    display: flex;
+    flex: 1.5;
+}
+.foodCategory h4::after {
+    flex: 0.7;
     height: 1px;
-    background-color: black;
+    margin-top: 15px;
+    content: '';
+    margin-left: 2rem;
+    background: rgb(164, 36, 36);
+}
+.foodCategory h4::before {
+    flex: 0.7;
+    margin-right: 2rem;
+    height: 1px;
+    margin-top: 15px;
+    content: '';
+    background: rgb(164, 36, 36);
 }
 .foodItem {
     cursor: pointer;
     position: relative;
-    background-color: rgb(250, 250, 250);
-    margin-top: 1rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     transition: 0.4s;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 10rem;
+    font-size: 1.3em;
     border-radius: 8px;
 }
 .foodItem:hover {
@@ -88,7 +138,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.3em;
 }
+.priceAndTitle p {
+    font-size: 0.65em;
+    text-transform: lowercase;
+}
+
 .description {
     display: flex;
     flex-direction: row;
@@ -108,4 +164,20 @@
     height: 20px;
     border-radius: 50%;
     background-color: red;
+}
+@media screen and (max-width: 900px) {
+    .foodItem {
+        font-size: 0.8em;
+        padding: 0.5rem 1rem;
+    }
+    .banner {
+        width: 100vw;
+        position: relative;
+        height: 5vh !important;
+        padding: 0;
+        overflow: hidden;
+    }
+    .banner img {
+        height: 5vh !important;
+    }
 }
