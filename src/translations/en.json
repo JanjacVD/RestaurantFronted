@@ -1,17 +1,56 @@
 {
     "landing": {
-        "title": "Our story",
-        "description": "Lorem ipsuem text"
+        "hero": {
+            "work": "Work time"
+        },
+        "about": {
+            "title": "Our story",
+            "text": "Lorem here",
+            "buttons": {
+                "book": "Book a table",
+                "check": "Check the menu"
+            },
+            "icons": {
+                "wheel": "Wheelchair accessible",
+                "pet": "Pet friendly",
+                "google": "Google pay accepted",
+                "pay": "Contactless pay",
+                "book": "Bookable online",
+                "private": "Private events"
+            }
+        }
     },
-    "buttons": {
-        "book": "Book a table",
-        "check": "Check the menu"
+    "booking": {
+        "title": "Book your table",
+        "next": "Next",
+        "back": "Back",
+        "name": "Name",
+        "email": "E-mail",
+        "phone": "Phone",
+        "submit": "Submit",
+        "nameError": "Name is invalid",
+        "emailError": "Email is invalid",
+        "phoneError": "Phone number is invalid",
+        "thanks": "Thank you for your reservation!",
+        "goConfirm": "Please confirm it via the email message we've sent you"
     },
-    "icons":{
-        "wheel": "Wheelchair accessible",
-        "pet": "Pet friendly",
-        "pay": "Contactless pay",
-        "book": "Bookable online",
-        "private": "Private hosts"
+    "contact": {
+        "us": "Contact us",
+        "weRespond": "We will respond as soon as possible",
+        "msg": "Message",
+        "sent": "Message sent sucessfully",
+        "subject": "Subject"
+    },
+    "error": "An error occurred, please try again",
+    "send": "Send",
+    "sending": "Sending...",
+    "footer": {
+        "visitSocial": "Visit us on social media",
+        "home": "Home",
+        "menu": "Menu",
+        "gallery": "Gallery",
+        "booking" : "Booking",
+        "contact": "Contact",
+        "privacy": "Privacy Policy"
     }
 }

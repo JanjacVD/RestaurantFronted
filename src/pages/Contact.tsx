@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState} from 'react';
 import '../css/contact.css';
+import {useTranslation} from 'react-i18next';
 import {contactUrl} from '../env/constants';
 export default function Contact() {
     function submitForm(ev: any) {
@@ -29,6 +30,7 @@ export default function Contact() {
     const [email, setEmail] = useState<string>();
     const [message, setMessage] = useState<string>();
     const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
+    const {t} = useTranslation();
     return (
         <div className="contact-body">
             <div className="contact-form-body">
@@ -37,14 +39,15 @@ export default function Contact() {
                         color: '#ff9966',
                         fontFamily: "'poppins','sans-serif'",
                     }}>
-                    Kontaktirajte nas
+                    {t('contact.us')}
                 </h1>
                 <h5
                     style={{
                         fontFamily: "'Poppins', sans-serif",
                         paddingBottom: '10px',
                     }}>
-                    Pobrinut ćemo se da vam odgovorimo u što kraćem roku.
+                    {t('contact.weRespond')}
+                
                 </h5>
                 <div
                     className={
@@ -52,7 +55,7 @@ export default function Contact() {
                             ? 'form-success form-success-open'
                             : 'form-success'
                     }>
-                    Poruka uspjesno poslana
+                        {t('contact.sent')}
                 </div>
                 <form
                     onSubmit={(ev) => {
@@ -60,52 +63,52 @@ export default function Contact() {
                     }}
                     className="contact-form">
                     <label htmlFor="name" className="contact-label">
-                        Ime:
+                    {t('booking.name')}:
                     </label>
                     <input
                         type="text"
                         name="name"
                         id="name"
-                        placeholder="Vaše ime:"
+                        placeholder="John doe"
                         className="contact-input"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <label htmlFor="subject" className="contact-label">
-                        Predmet:
+                    {t('contact.subject')}:
                     </label>
                     <input
                         type="text"
                         name="subject"
                         id="subject"
-                        placeholder="Predmet"
+                        placeholder="Subject"
                         className="contact-input"
                         required
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
                     />
                     <label htmlFor="email" className="contact-label">
-                        E-mail:
+                    {t('booking.email')}:
                     </label>
                     <input
                         type="email"
                         name="email"
                         id="email"
-                        placeholder="E-mail"
+                        placeholder="example@email.com"
                         className="contact-input"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <label htmlFor="message" className="contact-label">
-                        Poruka:
+                    {t('contact.msg')}:
                     </label>
                     <textarea
                         className="contact-textarea"
                         name="message"
                         id="message"
-                        placeholder="Vaša poruka ovdje"
+                        placeholder="Your message here..."
                         cols={30}
                         rows={5}
                         required
@@ -115,7 +118,7 @@ export default function Contact() {
                         disabled={buttonDisabled}
                         type="submit"
                         className="contact-submit">
-                        {buttonDisabled ? 'Sending...' : 'Pošalji'}
+                        {buttonDisabled ? t('sending') : t('send')}
                     </button>
                 </form>
             </div>

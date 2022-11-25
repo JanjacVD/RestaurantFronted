@@ -1,3 +1,56 @@
 {
-   
+    "landing": {
+        "hero": {
+            "work": "Radno vrijeme"
+        },
+        "about": {
+            "title": "Naša priča",
+            "text": "Lorem here",
+            "buttons": {
+                "book": "Rezervirajte stol",
+                "check": "Pogledaj jelovnik"
+            },
+            "icons": {
+                "wheel": "Pristupačno za invalide",
+                "pet": "Pet friendly",
+                "google": "Google pay prihvaćen",
+                "pay": "Bezkontaktno plačanje",
+                "book": "Rezervirajte online",
+                "private": "Privatne zabave"
+            }
+        }
+    },
+    "booking": {
+        "title": "Rezervirajte vaš stol",
+        "next": "Dalje",
+        "back": "Natrag",
+        "name": "Ime",
+        "email": "E-mail",
+        "phone": "Broj mobitela",
+        "submit": "Potvrdi",
+        "nameError": "Ime nije važeće",
+        "emailError": "E-mail nije važeći",
+        "phoneError": "Broj mobitela nije važeći",
+        "thanks": "Hvala vam na vašoj rezervaciji!",
+        "goConfirm": "Molimo potvrdite ju preko poruke koju smo vam poslali na vaš E-mail"
+    },
+    "contact": {
+        "us": "Kontaktirajte nas",
+        "weRespond": "Odgovorit ćemo vam u što kraćem roku",
+        "msg": "Poruka",
+        "sent": "Poruka uspješno poslana",
+        "subject": "Predmet"
+    },
+    "error": "Došlo je do pogreške, molimo pokušajte ponvono",
+    "send": "Pošalji",
+    "sending": "Slanje...",
+    "footer": {
+        "visitSocial": "Posjetite nas na društvenim mrežama",
+        "home": "Naslovnica",
+        "menu": "Jelovnik",
+        "gallery": "Galerija",
+        "booking" : "Rezervacije",
+        "contact": "Kontakt",
+        "privacy": "Politika privatnosti"
+    }
 }

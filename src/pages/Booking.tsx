@@ -14,14 +14,15 @@ import {disabledDatesUrl, disabledTimesUrl} from '../env/constants';
 import {sendReservation} from '../hooks/sendReservationRequest';
 import Loading from '../layouts/Loading';
 import {InfoContext} from '../state/info.state';
+import {useTranslation} from 'react-i18next';
 interface StepInterface {
     step: number;
     title: any;
 }
 export default function Booking() {
     const [step, setStep] = useState<number>(0);
+    const {t} = useTranslation();
     const {infoState, currentLang} = useContext(InfoContext);
-    const submitForm = () => {};
     if (!infoState) {
         return <Loading />;
     } else if (!infoState.is_open || !infoState.reservations_open) {
@@ -74,8 +75,8 @@ export default function Booking() {
     //TODO: If infostate reservations_isopen is false return disabled screen or if is not open
     return (
         <div className="booking-form">
-            <form onSubmit={submitForm}>
-                <h1>Rezervirajte svoj stol</h1>
+            <form>
+                <h1>{t('booking.title')}</h1>
                 <div className="step-count">
                     {steps.map((s) => {
                         return (
@@ -118,6 +119,8 @@ const Stepper = ({
     const [disabledDates, setDisabledDates] = useState<Date[] | undefined>(
         undefined,
     );
+    const {t} = useTranslation();
+
     const checkAndSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         if (
@@ -247,6 +250,15 @@ const Stepper = ({
         });
         setDisabledDates(dates);
     }, []);
+    const getDisabledDays = () => {
+        let days: number[] = [];
+        for (let i = 0; i < 7; i++) {
+            if(i < infoState.day_from || i > infoState.day_to){
+                days.push(i)
+            }
+        }
+        return days;
+    };
     if (loading) {
         return <Loading />;
     }
@@ -256,7 +268,7 @@ const Stepper = ({
                 <div className="form-step">
                     <div className="inputArea">
                         <Datepicker
-                            disabledDays={[]}
+                            disabledDays={getDisabledDays()}
                             disabledDates={disabledDates}
                             lang={currentLang}
                             maxDate={40}
@@ -266,7 +278,9 @@ const Stepper = ({
                         />
                     </div>
                     <div className="choose-step">
-                        <button onClick={(e) => nextStep(e)}>Next</button>
+                        <button onClick={(e) => nextStep(e)}>
+                            {t('booking.next')}
+                        </button>
                     </div>
                 </div>
             );
@@ -300,13 +314,13 @@ const Stepper = ({
                         <button
                             onClick={(e) => prevStep(e)}
                             className="prev-step">
-                            Prev
+                            {t('booking.back')}
                         </button>
                         <button
                             onClick={(e) => nextStep(e)}
                             disabled={time === null}
                             className="next-step">
-                            Next
+                            {t('booking.next')}
                         </button>
                     </div>
                 </div>
@@ -337,13 +351,13 @@ const Stepper = ({
                         <button
                             onClick={(e) => prevStep(e)}
                             className="prev-step">
-                            Prev
+                            {t('booking.back')}
                         </button>
                         <button
                             onClick={(e) => nextStep(e)}
                             disabled={numberOfPeople === null}
                             className="next-step">
-                            Next
+                            {t('booking.next')}
                         </button>
                     </div>
                 </div>
@@ -360,9 +374,11 @@ const Stepper = ({
                             aria-describedby="nameError"
                             onChange={(e) => validateName(e.target.value)}
                         />
-                        <label htmlFor="name">Ime:</label>
+                        <label htmlFor="name">{t('booking.name')}:</label>
                         {nameError ? (
-                            <strong id="nameError">Name is invalid</strong>
+                            <strong id="nameError">
+                                {t('booking.nameError')}
+                            </strong>
                         ) : null}
                     </div>
 
@@ -375,9 +391,11 @@ const Stepper = ({
                             aria-describedby="emailError"
                             onChange={(e) => validateEmail(e.target.value)}
                         />
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email">{t('booking.email')}:</label>
                         {emailError ? (
-                            <strong id="emailError">Email is invalid</strong>
+                            <strong id="emailError">
+                                {t('booking.emailError')}
+                            </strong>
                         ) : null}
                     </div>
 
@@ -392,39 +410,39 @@ const Stepper = ({
                                 validatePhoneNumber(e.target.value)
                             }
                         />
-                        <label htmlFor="phone">Mobitel:</label>
+                        <label htmlFor="phone">{t('booking.phone')}:</label>
                         {phoneError ? (
-                            <strong id="phoneError">Phone is invalid</strong>
+                            <strong id="phoneError">
+                                {t('booking.phoneError')}
+                            </strong>
                         ) : null}
                     </div>
                     <div className="choose-step">
                         <button
                             onClick={(e) => prevStep(e)}
                             className="prev-step">
-                            Prev
+                            {t('booking.back')}
                         </button>
                         <button
                             disabled={checkIfFormDisabled()}
                             onClick={(e) => checkAndSubmit(e)}
                             className="next-step">
-                            Submit
+                            {t('booking.submit')}
                         </button>
                     </div>
                 </div>
             );
         case 6:
-            return(
-            <div className="booking-success">
-                <h2>Dogodila se greška, molimo pokušajte ponovno</h2>{' '}
-            </div>);
+            return (
+                <div className="booking-success">
+                    <h2>{t('error')}</h2>
+                </div>
+            );
         default:
             return (
                 <div className="booking-success">
-                    <h2>Hvala vam na vašoj rezervaciji.</h2>
-                    <p>
-                        Molimo vas da ju potvrdite preko poruke koje smo poslali
-                        na vaš E-mail
-                    </p>
+                    <h2>{t('booking.thanks')}</h2>
+                    <p>{t('booking.goConfirm')}</p>
                 </div>
             );
     }

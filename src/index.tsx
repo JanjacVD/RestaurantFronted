@@ -4,6 +4,7 @@ import './index.css';
 import {BrowserRouter} from 'react-router-dom';
 import Router from './Router';
 import InfoContextProvider from './state/info.state';
+import './i18n';
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );

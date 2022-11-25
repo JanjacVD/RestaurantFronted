@@ -5,6 +5,7 @@ import globe from '../assets/images/globe.png';
 import NavigationButton from './components/NavigationButton';
 import {InfoContext} from '../state/info.state';
 import { Link } from 'react-router-dom';
+import i18n from '../i18n';
 export default function Navbar() {
     const {changeLocale, currentLang} = useContext(InfoContext);
     const navLinks: any = [
@@ -64,6 +65,11 @@ export default function Navbar() {
         setOffset(current);
     };
     window.addEventListener('scroll', hadnelScroll);
+    const changeLang = (e: any) => {
+        i18n.changeLanguage(e.target.value)
+        setDisplayLangSelection(false);
+        changeLocale(e.target.value)
+    }
     return (
         <>
             <nav className={navSeen ? 'navToggled' : 'navHidden'}>
@@ -151,9 +157,9 @@ export default function Navbar() {
                                             ? 'activeLink'
                                             : ''
                                     }
-                                    onClick={() => {
-                                        changeLocale(lang.lang_code);
-                                        setDisplayLangSelection(false);
+                                    value={lang.lang_code}
+                                    onClick={(e) => {
+                                        changeLang(e);
                                     }}
                                     aria-label={`Change Language to 
                                   ${lang.lang}`}>
